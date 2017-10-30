@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src="/mchp.js" type="text/javascript"></script>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=iso-8859-2">
+
+</head>
+<body>
+<center>
+<br>
+<p>
+<font size="6"><b>Monitoring przekształtników energoelektronicznych</b><br>
+</font>
+</p>
+</center>
+<font size="5"><b>
+Kaskada zaworowa na stały moment:</b>
+<font size="4">
+<br><br>
+		K&#261;t wysterowania &alpha; kaskady =  <span id="napiecie0" >?</span> °
+<br><br>
+					Prędkoć kaskady =  <span id="napiecie01" >?</span> obr/min
+<script type="text/javascript">
+
+function updateStatus(xmlData) {
+     document.getElementById('napiecie0').innerHTML = getXMLValue(xmlData, 'napiecie0');
+	  
+	 var n= 0.043*getXMLValue(xmlData, 'napiecie0')*getXMLValue(xmlData, 'napiecie0')-13.68*getXMLValue(xmlData, 'napiecie0')+1463.4;
+	document.getElementById('napiecie01').innerHTML= n.toFixed(1); 
+	 }
+
+setTimeout("newAJAXCommand('status.xml', updateStatus, true)",5000);
+</script>
+<br><br><font size="5"><b>
+Układ silnika klatkowego z falownikiem:</b><font size="4">
+<br><br>
+Pr&#261;d falownika: 10 A
+<br><br>
+Napięcie falownika: 200 V 
+<br><br>
+Częstotliwo&#347ć falownika: 45 Hz
+</font>
+
+
+
+</body></html>
+
